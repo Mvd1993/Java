@@ -1,12 +1,13 @@
 import java.sql.Date;
 //import java.util.Hashtable;
+import java.util.Hashtable;
 
 public class Student extends Person{
 	String id;
 	String username;
 	String password;
 	Apartment apartment;
-	//Hashtable<Subject, Integer> personasyEdades = new Hashtable<Subject, Integer>();
+	Hashtable<Subject, Integer> subjectQualification = new Hashtable<Subject, Integer>();
 	
 	public Student(String name) {
 		super(name);
@@ -16,6 +17,14 @@ public class Student extends Person{
 		super(name);
 		this.setPets(pet);
 		this.apartment=apartment;
+		
+		// TODO Auto-generated constructor stub
+	}
+	public Student(String name, Pet pet, Apartment apartment, Hashtable subjectQualification) {
+		super(name);
+		this.setPets(pet);
+		this.apartment=apartment;
+		this.subjectQualification = subjectQualification;
 		// TODO Auto-generated constructor stub
 	}
 
