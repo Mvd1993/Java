@@ -71,47 +71,36 @@ public class Utils {
 	
 	
 	
-	public static void observation(Scanner reader, BirdsDB db) {
-		//adds observation to bird
-		//get the bird
-		String name = askForName(reader);
-		
-		//ask if bird is on the wire (Leonard Cohen)
-		int location = isBirdInDb( name, db );
-		//System.out.println("location: "+location); // Just for checking purposes
-		if (location  != -1) {
-			//true add observation
-			db.getBird(location).addObservation();
-		}
-		else {
-		//false prompt a message
-		noBirdMessage();
-		}
-	}
+	/*
+	 * public static void observation(Scanner reader, BirdsDB db) { //adds
+	 * observation to bird //get the bird String name = askForName(reader);
+	 * 
+	 * //ask if bird is on the wire (Leonard Cohen) int location = isBirdInDb( name,
+	 * db ); //System.out.println("location: "+location); // Just for checking
+	 * purposes if (location != -1) { //true add observation
+	 * db.getBird(location).addObservation(); } else { //false prompt a message
+	 * noBirdMessage(); } }
+	 */
 	
 	public static void noBirdMessage() {
 		System.out.println("This bird doesn't exists. Create it first, please.");
 	}
 		
-	public static void show(Scanner reader, BirdsDB db) { 
-		//shows single bird data
-		
-		//get the bird
-		////ask the user
-		String name = askForName( reader );
-		////check if bird exists
-		int location = isBirdInDb(name, db);
-		
-		//Print the data
-		if (location != -1) {
-		//////true print the bird data
-			System.out.println(db.getBird(location)); //Prints bird data by default as defined in toString
-		}
-		else {
-			//////false prompt a message 
-			noBirdMessage();
-		}
-	}
+	/*
+	 * public static void show(Scanner reader, Connection conn) { //shows single
+	 * bird data
+	 * 
+	 * //get the bird ////ask the user String name = askForName( reader ); ////check
+	 * if bird exists
+	 * 
+	 * 
+	 * //Print the data
+	 * 
+	 * //////true print the bird data System.out.println(db.getBird(location));
+	 * //Prints bird data by default as defined in toString
+	 * 
+	 * }
+	 */
 	
 	public static void statistics(BirdsDB db) { 
 		//Print the complete DB

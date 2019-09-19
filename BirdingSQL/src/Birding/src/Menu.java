@@ -36,12 +36,17 @@ public class Menu {
 			} 
 				  else if (command.equals("Add")) { 
 					  Utils.add(this.reader,conn); } 
+				  
+				  else if (command.equals("Statistics")) { 
+					  UtilsSQL.showAll(conn); }
+	        
+	        
 				  /*else if (command.equals("Observation")) { 
 					  Utils.observation(this.reader,db); } 
-				  else if (command.equals("Show")) { 
-					  Utils.show(this.reader,db); } 
-				  else if (command.equals("Statistics")) { 
-					  Utils.statistics(db); }*/
+				  
+				   else if (command.equals("Show")) { 
+					  Utils.show(this.reader,conn); } 
+				  */
 				 
 	    }
 	}

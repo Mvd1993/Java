@@ -2,6 +2,7 @@ package Birding.src;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -20,6 +21,20 @@ public class UtilsSQL {
 	  stat.close();
 	  
 	  }
+	
+	
+	
+	public static void showAll(Connection conn) throws SQLException {
+		Statement stat = conn.createStatement();
+		ResultSet rs;
+		rs = stat.executeQuery("Select * from birdsdb");
+		while (rs.next()){
+			System.out.println("name : "+rs.getString("name")+" | NameLatin : "+rs.getString("nameLatin")+" | Observations : "+rs.getInt("observations"));
+			
+		}
+		
+		
+	}
 	
 	public static boolean isBirdInDb(Bird bird, Connection conn)throws Exception {	
 		//Check for empty array
